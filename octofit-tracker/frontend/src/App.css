@@ -1,5 +1,127 @@
 .App {
   text-align: center;
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    color: #222b45;
+  }
+
+  /* App Container */
+  .App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Navigation Bar */
+  .navbar {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #3a8dde 0%, #6dd5ed 100%);
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 8px rgba(58, 141, 222, 0.08);
+  }
+
+  .navbar-logo {
+    height: 40px;
+    margin-right: 1.5rem;
+  }
+
+  .navbar-menu {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .navbar-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+  .navbar-link:hover {
+    color: #ffe082;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #3a8dde;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(58, 141, 222, 0.07);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+  th {
+    background: #3a8dde;
+    color: #fff;
+    font-weight: 600;
+  }
+  tr:nth-child(even) {
+    background: #f3f8fd;
+  }
+  tr:hover {
+    background: #e0eafc;
+  }
+
+  /* Buttons */
+  button, .btn {
+    background: linear-gradient(90deg, #3a8dde 0%, #6dd5ed 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(58, 141, 222, 0.10);
+    transition: background 0.2s, color 0.2s;
+  }
+  button:hover, .btn:hover {
+    background: linear-gradient(90deg, #6dd5ed 0%, #3a8dde 100%);
+    color: #ffe082;
+  }
+
+  /* Links */
+  a {
+    color: #3a8dde;
+    text-decoration: underline;
+    transition: color 0.2s;
+  }
+  a:hover {
+    color: #6dd5ed;
+  }
+
+  /* Misc */
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(58, 141, 222, 0.10);
+    padding: 2rem;
+    margin: 1.5rem 0;
+  }
 }
 
 .App-logo {
