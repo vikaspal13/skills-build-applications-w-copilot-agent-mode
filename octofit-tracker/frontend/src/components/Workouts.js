@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Workouts = () => {
   const [workouts, setWorkouts] = useState([]);
@@ -21,16 +22,47 @@ const Workouts = () => {
       });
   }, [endpoint]);
 
-  if (loading) return <div>Loading Workouts...</div>;
+  if (loading) return (
+    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '200px' }}>
+      <div className="spinner-border text-primary" role="status">
+        <span className="visually-hidden">Loading Workouts...</span>
+      </div>
+    </div>
+  );
 
   return (
-    <div>
-      <h2>Workouts</h2>
-      <ul>
-        {workouts.map((workout, idx) => (
-          <li key={workout.id || idx}>{JSON.stringify(workout)}</li>
-        ))}
-      </ul>
+    <div className="container">
+      <div className="card shadow mb-4">
+        <div className="card-header bg-primary text-white">
+          <h2 className="mb-0">Workouts</h2>
+        </div>
+        <div className="card-body">
+          {workouts.length === 0 ? (
+            <div className="alert alert-info">No workouts found.</div>
+          ) : (
+            <div className="table-responsive">
+              <table className="table table-striped table-hover align-middle">
+                <thead className="table-dark">
+                  <tr>
+                    {Object.keys(workouts[0]).map((key) => (
+                      <th key={key} scope="col">{key.charAt(0).toUpperCase() + key.slice(1)}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {workouts.map((workout, idx) => (
+                    <tr key={workout.id || idx}>
+                      {Object.values(workout).map((val, i) => (
+                        <td key={i}>{typeof val === 'object' ? JSON.stringify(val) : val}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
